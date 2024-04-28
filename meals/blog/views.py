@@ -3,10 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Test')
+    return render(request,'blog/index.html')
 
 def specific(request):
     return HttpResponse('Test 2')
-
-def meal(request,meal_id):
-    return HttpResponse(meal_id)
