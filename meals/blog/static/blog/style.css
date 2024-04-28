@@ -3,8 +3,8 @@ ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #3d3b3b;
-    position: fixed;
+    background-color: #302f2f;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -12,6 +12,7 @@ ul{
 li{
     float: left;
     border-right: 1px solid #bbb;
+    color: white;
 }
 li:last-child{
     border-right: none;
@@ -22,4 +23,13 @@ li a{
     text-decoration: none;
     padding: 14px 16px;
     text-align: center;
+}
+li a :hover{
+    color: burlywood;
+}
+.container{
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 75px;
+    margin-bottom: 25px;
 }

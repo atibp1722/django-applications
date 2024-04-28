@@ -19,15 +19,20 @@
             </ul>
         </div>
 
-        <div class="container row mt-5 text-center" style="margin-left: auto; margin-right: auto">
+        <div class="container row text-center">
 
             {% for i in meals %}
-            <div class="col-lg-6 col-sm-12 mb-3 py-10">
-                <div class="card" style="width: 28rem; margin: 0 auto">
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="card" style="width: 20rem; margin: 0 auto">
                     <img class="card-img-top" src="{{ i.recipe.image }}"/>
                     <div class="card-body">
                         <h5 class="card-title">{{ i.recipe.label }}</h5>
-                        <p class="card--content">{{ i.recipe.source }}</p>
+                        <p class="card--content">From: {{ i.recipe.source }}</p>
+                        <details>
+                            <summary>More Info</summary>
+                            <p style="margin-top: 8px;">{{ i.recipe.calories }}kCal</p>
+                            <p>{{ i.recipe.ingredientLines }}</p>
+                        </details>
                     </div>
                 </div>
             </div>
