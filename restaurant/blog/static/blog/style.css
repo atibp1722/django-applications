@@ -1,0 +1,42 @@
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #302f2f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+li{
+    float: left;
+    border-right: 1px solid #bbb;
+    color: white;
+}
+li:last-child{
+    border-right: none;
+}
+li a{
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 14px 16px;
+    text-align: center;
+}
+footer{
+    position: absolute;
+    margin-top: 20px;
+    height: 180px;
+    clear: both;
+    background-color: #E1F7F5;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+}
+.footer-div{
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    padding-left: 10px;
+}

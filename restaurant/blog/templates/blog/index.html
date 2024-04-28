@@ -5,8 +5,42 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Restaurant || Home</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{%static 'blog/style.css'%}">
     </head>
     <body>
         
+        <div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Contact</a></li>
+                <li><a href="/">About Us</a></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <div class="footer-div">
+                <p>Location</p>
+                Location: Kathmandu
+                <br><br>
+                We are open for franchising.
+                <br>
+            </div>
+            <div class="footer-div">
+                <p>Opening Hours</p>
+                <span style="color: rgb(100, 176, 176);">9AM - 9PM</span>
+                <br><br>
+                We are open 7 days a week.
+                <br>
+            </div>
+            <div class="footer-div">
+                <p>Hear from our customers</p>
+                "One of the best restaurants in Ktm."
+                <br><br>
+                "The entire menu is to die for!".
+                <br>
+            </div>
+        </footer>
+
     </body>
 </html>
