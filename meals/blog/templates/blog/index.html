@@ -21,6 +21,14 @@
 
         <div class="container row text-center">
 
+            <form class="form-inline mb-5">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="user_search" 
+                    placeholder="Type to search any recipe..." style="display: inline-block; height: 2.75rem; width: 50%"/>
+                    <input type="submit" class="btn btn-light btn-lg" value="Search"></input>
+                </div>
+            </form>
+
             {% for i in meals %}
             <div class="col-lg-4 col-sm-12 mb-3">
                 <div class="card" style="width: 20rem; margin: 0 auto">
