@@ -7,3 +7,12 @@ def index(request):
 def particular(request):
     return HttpResponse()
 
+def menu(request):
+    return render(request,'blog/menu.html')
+
+def specials(request):
+    return render(request,'blog/.specials')
+
+def meals(request):
+    return render(request,'blog/.meals')
+ 
