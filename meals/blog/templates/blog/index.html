@@ -22,6 +22,7 @@
         <div class="container row text-center">
 
             <form method="post" action="{% url 'search' %}" class="form-inline mb-5">
+                {% csrf_token %}
                 <div class="form-group">
                     <input class="form-control" type="text" name="user_search" 
                     placeholder="Type to search any recipe..." style="display: inline-block; height: 2.75rem; width: 50%"/>
