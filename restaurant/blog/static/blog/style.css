@@ -64,3 +64,20 @@ footer{
     width: 100%;
     height: 250px;
 }
+
+.card-specials{
+    width: 47%;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #b4a0a0;
+    margin: 12px;
+    background: whitesmoke;
+    color: black;
+    font-style: italic;
+    border-radius: 5px;
+}
+
+.card-specials img{
+    width: 100%;
+    height: 300px;
+}
