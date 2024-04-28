@@ -22,3 +22,9 @@ def search(request):
         return render(request,'blog/index.html',{'meals':meals})
     else:
         return render(request,'blog/index.html')
+
+def about(request):
+    return render(request,'blog/about.html')
+
+def contact(request):
+    return render(request,'blog/contact.html')
