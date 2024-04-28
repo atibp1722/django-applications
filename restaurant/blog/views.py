@@ -14,5 +14,5 @@ def specials(request):
     return render(request,'blog/specials.html')
 
 def meals(request):
-    return render(request,'blog/.meals')
+    return render(request,'blog/meals.html')
  
