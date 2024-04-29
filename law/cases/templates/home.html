@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Law Firm Web Portal</h1>
+    <p class="lead">One stop portal for all your legal needs.</p>
+    <hr class="my-4">
+    <p>Feel free to navigate the site's menu options</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'cases:client_list' %}" role="button">Clients</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'cases:lawyer_list' %}" role="button">Lawyers</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'cases:case_list' %}" role="button">Cases</a>
+</div>
+
+
+{% endblock %}
