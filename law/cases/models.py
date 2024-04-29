@@ -18,7 +18,7 @@ class Lawyer(models.Model):
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
-class Case(models.Models):
+class Case(models.Model):
     STATUS_CHOICES=(
         ('OPEN','Open'),
         ('CLOSED','Closed'),
@@ -30,7 +30,7 @@ class Case(models.Models):
     status=models.CharField(max_length=10,choices=STATUS_CHOICES,default='OPEN')
     client=models.ForeignKey(Client,on_delete=models.CASCADE)
     lawyer=models.ForeignKey(Lawyer,on_delete=models.CASCADE)
-    created_on=models.DateField(auto_now_add=True)
+    created_at=models.DateField(auto_now_add=True)
     updated_at=models.DateField(auto_now=True)
 
     def __str__(self):
