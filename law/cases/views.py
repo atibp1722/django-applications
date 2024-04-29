@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 class HomeView(TemplateView):
     template_name='home.html'
 
+# CLIENT VIEWS
 class ClientListView(ListView):
     model=Client
     template_name='clients/client_list.html'
@@ -32,3 +33,47 @@ class ClientDeleteView(DeleteView):
         context=super().get_context_data(**kwargs)
         context['title']='Delete Client'
         return context
+
+# LAWYER VIEWS
+class LawyerListView(ListView):
+    model=Lawyer
+    template_name='lawyers/lawyer_list.html'
+
+class LawyerCreateView(CreateView):
+    model=Lawyer
+    form_class=LawyerForm
+    template_name='lawyers/lawyer_form.html'
+    success_url='/lawyers/'
+
+class LawyerUpdateView(UpdateView):
+    model=Lawyer
+    form_class=LawyerForm
+    template_name='lawyers/lawyer_form.html'
+    success_url='/lawyers/'
+
+class LawyerDeleteView(DeleteView):
+    model=Lawyer
+    template_name='lawyers/lawyer_confirm_delete.html'
+    success_url=reverse_lazy('cases:lawyer_list')
+
+# CASE VIEWS
+class CaseListView(ListView):
+    model=Case
+    template_name='cases/case_list.html'
+
+class CaseCreateView(CreateView):
+    model=Case
+    form_class=CaseForm
+    template_name='cases/case_form.html'
+    success_url='/cases/'
+
+class CaseUpdateView(UpdateView):
+    model=Case
+    form_class=CaseForm
+    template_name='cases/case_form.html'
+    success_url='/cases/'
+
+class CaseDeleteView(DeleteView):
+    model=Case
+    template_name='cases/case_confirm_delete.html'
+    success_url=reverse_lazy('cases:case_list')
