@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Delete Lawyer</h1>
+<p>Are you sure you want to delete lawyer "{{ object.first_name }} {{ object.last_name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger btn-lg">Confirm</button>
+    <a href="{% url 'cases:lawyer_list' %}" class="btn btn-lg btn-secondary">Cancel</a>
+</form>
+
+{% endblock %}
