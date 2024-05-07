@@ -39,6 +39,8 @@ class BaseAPIView(APIView):
     
 class BaseViewSet(viewsets.ViewSet):
 
+    serializer_class=serializers.BaseSerializer
+
     def list(self,request):
         view_set=[
             'Actions often associated to a list set',
@@ -47,4 +49,24 @@ class BaseViewSet(viewsets.ViewSet):
         ]
         return Response({'message':view_set})
     
+    def create(self,request):
+        serializer=self.serializer_class(data=request.data)
+
+        if serializer.is_valid():
+            name=serializer.validated_data('name')
+            msg=f"Hello {name}"
+            return Response({'message':msg})
+        else:
+            return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+
+    def retrieve(self,request,pk=None):
+        return Response({'message':'RETRIEVE used'})
+
+    def update(self,request,pk=None):
+        return Response({'message':'UPDATE used'})  
     
+    def partial_update(self,request,pk=None):
+        return Response({'message':'PARTIAL UPDATE used'})
+    
+    def destroy(self,request,pk=None):
+        return Response({'message':'DELETE used'})
