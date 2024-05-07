@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
 
-from profiles_api import serializers
+from . import serializers
 
 
 class BaseAPIView(APIView):
