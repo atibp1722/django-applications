@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import viewsets
 
 from profiles_api import serializers
 
@@ -26,3 +27,24 @@ class BaseAPIView(APIView):
             return Response({'message':msg})
         else:
             return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+        
+    def put(self,request,pk=None):
+        return Response({'message':'PUT used'})
+
+    def patch(self,request,pk=None):
+        return Response({'message':'PATCH used'})
+    
+    def delete(self,request,pk=None):
+        return Response({'message':'DELETE used'})
+    
+class BaseViewSet(viewsets.ViewSet):
+
+    def list(self,request):
+        view_set=[
+            'Actions often associated to a list set',
+            'Auto mapping to urls via routers',
+            'More functiona but usees less code'
+        ]
+        return Response({'message':view_set})
+    
+    
