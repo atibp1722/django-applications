@@ -5,6 +5,7 @@ from . import models
 class BaseSerializer(serializers.Serializer):
     name=serializers.CharField(max_length=10)
 
+
 class UserProfileSerializer(serializers.Serializer):
     
     class Meta:
@@ -25,3 +26,16 @@ class UserProfileSerializer(serializers.Serializer):
             password=validated_data['password']
         )
         return user
+
+
+class ProfileFeedSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model=models.ProfileFeed
+        fields=('id','user_profile','status_text','created_on')
+        extra_kwargs={
+            'user_profile':
+            {
+                'read_only':True
+            }
+        }
