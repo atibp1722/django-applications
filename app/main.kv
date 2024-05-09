@@ -1,6 +1,11 @@
 #:kivy 2.1.0
 
 
+<WeatherList>:
+    ImageLeftWidget:
+        source:root.source
+
+
 <ContentNavigationDrawer>:
     orientation:'vertical'
     padding:'5dp'
@@ -55,9 +60,9 @@
                             title:'Weather App'
                             elevation:10
                             left_action_items:[['menu',lambda x:nav_drawer.toggle_nav_drawer()]]
-                            
+
                         ScrollView:
-                             MDList:
+                            MDList:
                                 id:home_list
                 
                 AboutPage:
