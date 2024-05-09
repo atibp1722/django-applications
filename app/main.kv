@@ -1,5 +1,30 @@
 #:kivy 2.1.0
 
+
+<ContentNavigationDrawer>:
+    orientation:vertical
+    padding:'5dp'
+    spacing:'5dp'
+
+    AnchorLayout:
+        anchor_x:'left'
+        size_hint_y:None
+        height:avatar.height
+
+        Image:
+            id:avatar
+            size_hint:None,None
+            size:'50dp','50dp'
+            source:'data/logo.png'
+
+    ScrollView:
+
+        MDList:
+            OneLineListItem:
+                text:'Home'
+            OneLineListItem::
+                text:'About'
+
 <MainWidget>:
     Screen:
 
@@ -20,6 +45,7 @@
             
             MDNavigationDrawer:
                 id:nav_drawer
+
                 ContentNavigationDrawer:
                     id:content_drawer
                     screen_manager:screen_manager
