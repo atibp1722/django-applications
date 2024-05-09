@@ -2,7 +2,7 @@
 
 
 <ContentNavigationDrawer>:
-    orientation:vertical
+    orientation:'vertical'
     padding:'5dp'
     spacing:'5dp'
 
@@ -15,7 +15,20 @@
             id:avatar
             size_hint:None,None
             size:'50dp','50dp'
-            source:'data/logo.png'
+            source:'data/weather.png'
+
+    MDLabel:
+        text:'One stop to get all information that you will ever need!'
+        font_style:'Button'
+        size_hint_y:None
+        height:self.texture_size[1]
+
+    MDLabel:
+        text:'weather.app@application.com'
+        font_style:'Caption'
+        size_hint_y:None
+        height:self.texture_size[1]
+
 
     ScrollView:
 
@@ -42,8 +55,10 @@
                             title:'Weather App'
                             elevation:10
                             left_action_items:[['menu',lambda x:nav_drawer.toggle_nav_drawer()]]
-                        ScrollView:
                             
+                        ScrollView:
+                             MDList:
+                                id:home_list
                 
                 AboutPage:
 
@@ -54,9 +69,9 @@
                             title:'Weather App'
                             elevation:10
                             left_action_items:[['menu',lambda x:nav_drawer.toggle_nav_drawer()]]
+
                         ScrollView:
-
-
+                           
             
             MDNavigationDrawer:
                 id:nav_drawer
