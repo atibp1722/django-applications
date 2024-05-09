@@ -22,8 +22,9 @@
         MDList:
             OneLineListItem:
                 text:'Home'
-            OneLineListItem::
+            OneLineListItem:
                 text:'About'
+
 
 <MainWidget>:
     Screen:
@@ -42,6 +43,20 @@
                             elevation:10
                             left_action_items:[['menu',lambda x:nav_drawer.toggle_nav_drawer()]]
                         ScrollView:
+                            
+                
+                AboutPage:
+
+                    name:'about page'
+                    BoxLayout:
+                        orientation:'vertical'
+                        MDToolBar:
+                            title:'Weather App'
+                            elevation:10
+                            left_action_items:[['menu',lambda x:nav_drawer.toggle_nav_drawer()]]
+                        ScrollView:
+
+
             
             MDNavigationDrawer:
                 id:nav_drawer
