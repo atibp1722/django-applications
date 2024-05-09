@@ -76,8 +76,14 @@
                             left_action_items:[['menu',lambda x:nav_drawer.toggle_nav_drawer()]]
 
                         ScrollView:
+                            MDLabel:
+                                id:about_label
+                                text_size:cm(5),cm(5)
+                                size:self.texture_size
+                                halign:'center'
+                                font_style:'H2'
+
                            
-            
             MDNavigationDrawer:
                 id:nav_drawer
 

@@ -74,6 +74,9 @@ class MainApp(MDApp):
 
             i=WeatherList(text=name,secondary_text=temp,tertiary_text=weather_desc,source=icon)
             hlist.add_widget(i)
+
+        lbl=self.root.ids.about_label
+        lbl.text='This awesome weather app is absolutely free to use!'
         
 
 MainApp().run()  
