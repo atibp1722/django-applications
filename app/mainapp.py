@@ -47,7 +47,32 @@ class MainApp(MDApp):
             temp=str(i['main']['temp'])
             temp_max=str(i['main']['temp_max'])
             temp_min=str(i['main']['temp_min'])
-            i=WeatherList(text=name,secondary_text=temp,tertiary_text=temp_max)
+            weather_desc=i['weather'][0]['description']
+
+            icon=''
+
+            if weather_desc=='clear sky':
+                icon='data/sunny.png'
+            elif weather_desc=='few clouds':
+                icon='data/cloudy.png'
+            elif weather_desc=='scattered clouds':
+                icon='data/scattered-clouds.png'
+            elif weather_desc=='broken clouds':
+                icon='data/broken-clouds.png'
+            elif weather_desc=='shower rain':
+                icon='data/shower-rain.png'
+            elif weather_desc=='rain':
+                icon='data/rain.png'
+            elif weather_desc=='thunderstorm':
+                icon='data/thunderstorm.png'
+            elif weather_desc=='snow':
+                icon='data/snowy.png'
+            elif weather_desc=='mist':
+                icon='data/misty.png'
+            else:
+                icon='data/sunny.png'
+
+            i=WeatherList(text=name,secondary_text=temp,tertiary_text=weather_desc,source=icon)
             hlist.add_widget(i)
         
 
