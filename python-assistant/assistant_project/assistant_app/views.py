@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse('Home Page Test')
+    return render(request,'assistant_app/index.html')
 
 
 # def named(request):
