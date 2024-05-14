@@ -15,7 +15,7 @@ h1{
 }
 
 .displayText{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
     text-align: left;
     line-height: 25px;
@@ -54,7 +54,7 @@ h1{
 
 .userText{
     text-align: right;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
     line-height: 25px;
     color: mediumblue;

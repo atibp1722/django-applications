@@ -27,11 +27,38 @@
         </div>
 
         <script>
+
+            listOptions();
+
+            function listOptions()
+            {
+                let options=[
+                    {number:1,title:'Weather'},
+                    {number:2,title:'News'}
+                ]
+
+                var html="<p class='displayText'>System says: <span>Please select an option from the list.</span></p>";
+                $('#assistant').append(html);
+
+                for(i=0;i<options.length;i++)
+                {
+                    var html="<p class='displayText'><span>"+options[i].number+" for "+options[i].title+"</span></p>";
+                    $('#assistant').append(html);
+                }
+
+                var assistant=document.getElementById('assistant');
+                assistant.scrollTop=assistant.scrollHeight;
+            }
+
+            function sendMessage(textMsg)
+            {
+                var userHtml="<p class='userText'>User says: <span>"+textMsg+"</span></p>";
+                $('#assistant').append(userHtml);
+            }
+
             function getUserText()
             {
-                var userText=$('#textInput').val();
                 var userHtml="<p class='userText'>User says: <span>"+userText+"</span></p>";
-                $('#textInput').val("");
                 $('#assistant').append(userHtml);
 
                 $.get('/assistant_app/getResponse',{userMessage:userText}).done(function(data)
@@ -43,7 +70,17 @@
 
             $('#buttonInput').click(function()
             {
-                getUserText();
+                var userText=$('#textInput').val();
+                $('#textInput').val("");
+
+                if (userText=="")
+                {
+                    alert('Field(s) cannot be empty!');
+                }else
+                {
+                    let textMsg=userText.trim();
+                    sendMessage(textMsg);
+                }
             })
         </script>
     </body>
