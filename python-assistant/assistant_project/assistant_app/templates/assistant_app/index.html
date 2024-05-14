@@ -68,6 +68,20 @@
                 })
             }
 
+            function systemResponse(textMsg)
+            {
+                if(textMsg=='1')
+                {
+                    // WEATHER
+                }else if(textMsg=='2')
+                {
+                    // NEWS
+                }else
+                {
+                    alert('Invalid input entered!');
+                }
+            }
+
             $('#buttonInput').click(function()
             {
                 var userText=$('#textInput').val();
@@ -80,8 +94,11 @@
                 {
                     let textMsg=userText.trim();
                     sendMessage(textMsg);
+
+                    systemResponse(textMsg);
                 }
             })
+
         </script>
     </body>
 </html>
