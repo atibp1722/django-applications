@@ -76,17 +76,25 @@
 
                     $.get('/assistant_app/getWeather',{lat:lat,long:long}).done(function(data)
                     {
-                        var msgTest="<p class='displayText'>System says: <span>"+data.name+"</span></p>"+
-                        "<p class='displayText'>System says: <span>"+data.main.temp+"</span></p>"+
-                        "<p class='displayText'>System says: <span>"+data.weather[0].description+"</span></p>";
+                        var msgTest="<p class='displayText'>System says [Location]: <span>"+data.name+"</span></p>"+
+                        "<p class='displayText'>System says [Temp]: <span>"+data.main.temp+"</span></p>"+
+                        "<p class='displayText'>System says [Weather]: <span>"+data.weather[0].description+"</span></p>";
                         $('#assistant').append(msgTest);
                     })
                 })
             }
 
             function getNews()
-            {
-
+            {  
+                $.get('/assistant_app/getNews').done(function(data)
+                {
+                    for(let i=0;i<5;i++)
+                    {
+                        var msgTest="<p class='displayText'>System says [Title]: <span>"+data.articles[i].title+"</span></p>"+
+                        "<p class='displayText'>System says [Author]: <span>"+data.articles[i].author+"</span></p>"+"<hr>";
+                        $('#assistant').append(msgTest);
+                    }
+                })
             }
 
             function systemResponse(textMsg)
