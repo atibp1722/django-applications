@@ -8,7 +8,3 @@ def index(request):
 
 # def named(request):
 #     return HttpResponse('Named URL')
-
-
-# def numbers(request,id):
-#     return HttpResponse(id)
