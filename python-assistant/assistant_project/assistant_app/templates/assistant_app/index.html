@@ -30,9 +30,15 @@
             function getUserText()
             {
                 var userText=$('#textInput').val();
-                var userHtml="<p class='userText'>User Says: <span>"+userText+"</span></p>";
+                var userHtml="<p class='userText'>User says: <span>"+userText+"</span></p>";
                 $('#textInput').val("");
                 $('#assistant').append(userHtml);
+
+                $.get('/assistant_app/getResponse',{userMessage:userText}).done(function(data)
+                {
+                    var msgTest="<p class='displayText'>System says: <span>"+data+"</span></p>";
+                    $('#assistant').append(msgTest);
+                })
             }
 
             $('#buttonInput').click(function()

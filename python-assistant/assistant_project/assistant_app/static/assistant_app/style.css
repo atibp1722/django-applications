@@ -16,7 +16,7 @@ h1{
 
 .displayText{
     font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-size: 20px;
     text-align: left;
     line-height: 25px;
     color: green;
@@ -55,9 +55,8 @@ h1{
 .userText{
     text-align: right;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 25px;
-    color: green;
-    font-style: italic;
+    color: mediumblue;
     font-weight: bold;
 }

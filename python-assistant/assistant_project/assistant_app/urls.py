@@ -8,4 +8,6 @@ urlpatterns=[
 
     # TEST FOR SPECIFICALLY NAMED URL
     # path('named_url/',views.named,name='named_url'),
+
+    path('getResponse',views.getResponse,name='getResponse'),
 ]

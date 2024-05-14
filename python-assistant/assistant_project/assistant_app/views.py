@@ -8,3 +8,8 @@ def index(request):
 
 # def named(request):
 #     return HttpResponse('Named URL')
+
+
+def getResponse(request):
+    msg=request.GET.get('userMessage')
+    return HttpResponse(msg)
