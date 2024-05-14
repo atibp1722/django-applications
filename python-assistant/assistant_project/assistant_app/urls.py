@@ -10,4 +10,5 @@ urlpatterns=[
     # path('named_url/',views.named,name='named_url'),
 
     path('getResponse',views.getResponse,name='getResponse'),
+    path('getWeather',views.getWeather,name='getWeather'),
 ]
